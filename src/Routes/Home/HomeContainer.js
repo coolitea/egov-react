@@ -5,10 +5,10 @@ import { moviesApi } from 'api';
 export default class extends React.Component {
   state = {
     nowPlaying: null,
-    upcoming: null,
     popular: null,
-    error: null,
-    loading: true
+    upcoming: null,
+    loading: true,
+    error: null
   };
 
   async componentDidMount() {
