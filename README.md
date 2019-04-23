@@ -33,6 +33,13 @@ yarn add prop-types
 yarn add react-router-dom
 ``` 
 
+CSS 추가하기 
+
+``` 
+yarn add styled-components
+yarn add styled-reset
+``` 
+
 앱 실행 
 ``` 
 yarn start
