@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Loader from 'Components/Loader';
 import Helmet from 'react-helmet';
+import Loader from 'Components/Loader';
+import Videos from "Components/Videos";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -117,6 +118,9 @@ const DetailPresenter = ({ result, loading, error }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          {result.videos && result.videos.results.length > 0 && (
+              <Videos videos={result.videos.results} />
+          )}
         </Data>
       </Content>
     </Container>
