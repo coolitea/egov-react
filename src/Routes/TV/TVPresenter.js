@@ -7,7 +7,7 @@ import Message from 'Components/Message';
 import Poster from 'Components/Poster';
 import Helmet from 'react-helmet';
 
-const Container = styled.div`
+const Container = styled.main`
   padding: 20px;
 `;
 

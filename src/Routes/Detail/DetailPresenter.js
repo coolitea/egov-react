@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Loader from 'Components/Loader';
 import Videos from "Components/Videos";
 
-const Container = styled.div`
+const Container = styled.main`
   height: calc(100vh - 50px);
   width: 100%;
   position: relative;

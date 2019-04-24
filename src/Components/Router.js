@@ -8,6 +8,7 @@ import {
 import Home from 'Routes/Home';
 import TV from 'Routes/TV';
 import Header from 'Components/Header';
+import Footer from 'Components/Footer';
 import Search from 'Routes/Search';
 import Detail from 'Routes/Detail';
 export default () => (
@@ -21,5 +22,6 @@ export default () => (
       <Route path="/show/:id" component={Detail} />
       <Redirect from="*" to="/" />
     </Switch>
+    <Footer />
   </Router>
 );
