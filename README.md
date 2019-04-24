@@ -27,14 +27,18 @@ React App 생성
 npx create-react-app egov-react
 ``` 
 
-.env 파일 생성
-
-``` 
-NODE_PATH=src
-```
-
 src/Components 폴더 생성
 
+jsconfig.json 파일 생성
+```javascript 
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  }
+}
+``` 
+
+타입 체크 
 ``` 
 yarn add prop-types
 ``` 
@@ -44,28 +48,30 @@ yarn add prop-types
 yarn add react-router-dom
 ``` 
 
-CSS 추가하기 
+스타일 추가 (CSS)
 
 ``` 
 yarn add styled-components
 yarn add styled-reset
 ``` 
 
-네트워킹 : HTTP request (API 호출)
+네트워크 처리 : HTTP request (API 호출)
 
 ``` 
 yarn add axios
 ``` 
 
-웹 페이지 Title 변경
+웹 페이지별 Title 관리
 ``` 
 react-helmet
+``` 
+
+앱 빌드
+``` 
+yarn build
 ``` 
 
 앱 실행 
 ``` 
 yarn start
 ``` 
-
-
-
