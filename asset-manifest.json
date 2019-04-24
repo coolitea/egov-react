@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.js": "/egov-react/static/js/main.700c71f2.chunk.js",
+    "main.js.map": "/egov-react/static/js/main.700c71f2.chunk.js.map",
+    "runtime~main.js": "/egov-react/static/js/runtime~main.41a0c415.js",
+    "runtime~main.js.map": "/egov-react/static/js/runtime~main.41a0c415.js.map",
+    "static/js/2.b0b44b84.chunk.js": "/egov-react/static/js/2.b0b44b84.chunk.js",
+    "static/js/2.b0b44b84.chunk.js.map": "/egov-react/static/js/2.b0b44b84.chunk.js.map",
+    "index.html": "/egov-react/index.html",
+    "precache-manifest.af7ecbe67d427c2353d18237d8d50d4d.js": "/egov-react/precache-manifest.af7ecbe67d427c2353d18237d8d50d4d.js",
+    "service-worker.js": "/egov-react/service-worker.js",
+    "static/media/noPosterSmall.png": "/egov-react/static/media/noPosterSmall.87a0eb6a.png"
+  }
+}
