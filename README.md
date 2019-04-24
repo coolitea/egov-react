@@ -83,3 +83,22 @@ yarn build
 ``` 
 yarn start
 ``` 
+
+테스트
+``` 
+yarn add --dev react-test-renderer
+``` 
+
+Proxy
+``` 
+yarn add http-proxy-middleware
+``` 
+
+setupProxy.js 파일 생성
+``` 
+const proxy = require('http-proxy-middleware');
+
+module.exports = function(app) {
+  app.use(proxy('/api', { target: 'http://localhost:8080/' }));
+};
+``` 
