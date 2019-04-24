@@ -21,11 +21,18 @@ https://www.themoviedb.org/
 - [ ] Search (Movie, TV)
 
 ## 작업
-React App 생성
 
+React App 생성
 ``` 
 npx create-react-app egov-react
+```
+
+또는
+
 ``` 
+yarn create react-app egov-react
+```
+
 
 src/Components 폴더 생성
 
