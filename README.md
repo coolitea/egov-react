@@ -56,12 +56,19 @@ yarn add prop-types
 yarn add react-router-dom
 ``` 
 
-스타일 추가 (CSS)
+(리액트 문법) 부트스트랩 추가
+
+``` 
+yarn add react-bootstrap bootstrap
+``` 
+
+스타일 컴포넌트 추가 (CSS)
 
 ``` 
 yarn add styled-components
 yarn add styled-reset
 ``` 
+
 
 네트워크 처리 : HTTP request (API 호출)
 

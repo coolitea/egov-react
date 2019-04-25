@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 const globalStyles = createGlobalStyle`
     ${reset};
@@ -15,8 +15,7 @@ const globalStyles = createGlobalStyle`
         font-size:12px;
         background-color:rgba(20, 20, 20, 1);
         color:white;        
-        padding:50px 0;
-        
+        padding:70px 0;        
     }
 `;
 

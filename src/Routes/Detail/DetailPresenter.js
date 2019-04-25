@@ -1,16 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import Helmet from 'react-helmet';
-import Loader from 'Components/Loader';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import Helmet from "react-helmet";
+import Loader from "Components/Loader";
 import Videos from "Components/Videos";
-
-const Container = styled.main`
-  height: calc(100vh - 50px);
-  width: 100%;
-  position: relative;
-  padding: 50px;
-`;
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Image from "react-bootstrap/Image";
 
 const Backdrop = styled.div`
   position: absolute;
@@ -26,25 +23,7 @@ const Backdrop = styled.div`
   z-index: 0;
 `;
 
-const Content = styled.div`
-  display: flex;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  height: 100%;
-`;
-
-const Cover = styled.div`
-  width: 30%;
-  background-image: url(${props => props.bgImage});
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-  border-radius: 5px;
-`;
-
 const Data = styled.div`
-  width: 70%;
   margin-left: 10px;
 `;
 
@@ -66,64 +45,72 @@ const Overview = styled.p`
   font-size: 12px;
   opacity: 0.7;
   line-height: 1.5;
-  width: 50%;
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>
   loading ? (
     <Loader />
   ) : (
-    <Container>
+    <>
       <Helmet>
         <title>
-          {result.original_title ? result.original_title : result.original_name}{' '}
+          {result.original_title ? result.original_title : result.original_name}{" "}
           | 전자정부서비스
         </title>
       </Helmet>
       <Backdrop
         bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
       />
-      <Content>
-        <Cover
-          bgImage={
-            result.poster_path
-              ? `https://image.tmdb.org/t/p/original${result.poster_path}`
-              : require('../../assets/noPosterSmall.png')
-          }
-        />
-        <Data>
-          <Title>
-            {result.original_title
-              ? result.original_title
-              : result.original_name}
-          </Title>
-          <ItemContainer>
-            <Item>
-              {result.release_date
-                ? result.release_date.substring(0, 4)
-                : result.first_air_date.substring(0, 4)}
-            </Item>
-            <Divider>•</Divider>
-            <Item>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} min
-            </Item>
-            <Divider>•</Divider>
-            <Item>
-              {result.genres &&
-                result.genres.map((genre, index) =>
-                  index === result.genres.length - 1
-                    ? genre.name
-                    : `${genre.name} / `
-                )}
-            </Item>
-          </ItemContainer>
-          <Overview>{result.overview}</Overview>
-          {result.videos && result.videos.results.length > 0 && (
-              <Videos videos={result.videos.results} />
-          )}
-        </Data>
-      </Content>
-    </Container>
+      <Container>
+        <Row>
+          <Col md={3}>
+            <Image
+              src={
+                result.poster_path
+                  ? `https://image.tmdb.org/t/p/original${result.poster_path}`
+                  : require("../../assets/noPosterSmall.png")
+              }
+              fluid
+              rounded
+            />
+          </Col>
+          <Col md={9}>
+            <Data>
+              <Title>
+                {result.original_title
+                  ? result.original_title
+                  : result.original_name}
+              </Title>
+              <ItemContainer>
+                <Item>
+                  {result.release_date
+                    ? result.release_date.substring(0, 4)
+                    : result.first_air_date.substring(0, 4)}
+                </Item>
+                <Divider>•</Divider>
+                <Item>
+                  {result.runtime ? result.runtime : result.episode_run_time[0]}{" "}
+                  min
+                </Item>
+                <Divider>•</Divider>
+                <Item>
+                  {result.genres &&
+                    result.genres.map((genre, index) =>
+                      index === result.genres.length - 1
+                        ? genre.name
+                        : `${genre.name} / `
+                    )}
+                </Item>
+              </ItemContainer>
+              <Overview>{result.overview}</Overview>
+              {result.videos && result.videos.results.length > 0 && (
+                <Videos videos={result.videos.results} />
+              )}
+            </Data>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 
 DetailPresenter.propTypes = {

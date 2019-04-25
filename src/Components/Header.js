@@ -1,53 +1,40 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { withRouter } from "react-router-dom";
+import styled from "styled-components";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
-const Header = styled.header`
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(20, 20, 20, 0.8);
-  z-index: 10;
-  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
-`;
-
-const List = styled.ul`
-  display: flex;
-`;
-
-const Item = styled.li`
-  width: 80px;
-  height: 50px;
-  text-align: center;
-  border-bottom: 3px solid
-    ${props => (props.current ? '#3498db' : 'transparent')};
-  transition: border-bottom 0.5s ease-in-out;
-`;
-
-const SLink = styled(Link)`
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+const Header = styled.header``;
 
 export default withRouter(({ location: { pathname } }) => (
   <Header>
-    <List>
-      <Item current={pathname === '/'}>
-        <SLink to="/">Movie</SLink>
-      </Item>
-      <Item current={pathname === '/tv'}>
-        <SLink to="/tv">TV</SLink>
-      </Item>
-      <Item current={pathname === '/search'}>
-        <SLink to="/search">Search</SLink>
-      </Item>
-    </List>
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light" fixed="top">
+      <Navbar.Brand to="/">전자정부서비스</Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Movie</Nav.Link>
+          <Nav.Link href="/tv">TV</Nav.Link>
+          <Nav.Link href="/search">Search</Nav.Link>
+          <NavDropdown title="Sample" id="collasible-nav-dropdown">
+            <NavDropdown.Item href="sample/1-1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="sample/1-2">
+              Another action
+            </NavDropdown.Item>
+            <NavDropdown.Item href="sample/1-2">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="sample/2">Separated link</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-light">Search</Button>
+        </Form>
+      </Navbar.Collapse>
+    </Navbar>
   </Header>
 ));
