@@ -1,15 +1,32 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Loader from "Components/Loader";
-import Section from "Components/Section";
-import Poster from "Components/Poster";
-import Helmet from "react-helmet";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Loader from 'Components/Loader';
+import Section from 'Components/Section';
+import Poster from 'Components/Poster';
+import Helmet from 'react-helmet';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
+import * as Constants from 'Constants';
+
+let CONST_SERVICE_NAME = Constants.SERVICE_NAME_EN;
+let CONST_SEARCH = Constants.SEARCH_EN;
+let CONST_SEARCH_MOVIES_OR_TV_SHOWS = Constants.SEARCH_MOVIES_OR_TV_SHOWS_EN;
+let CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_EN;
+let CONST_MOVIE_RESULT = Constants.MOVIE_RESULT_EN;
+let CONST_TV_RESULT = Constants.TV_RESULT_EN;
+
+if (Constants.LANGUAGE === 'KO') {
+  CONST_SERVICE_NAME = Constants.SERVICE_NAME_KO;
+  CONST_SEARCH = Constants.SEARCH_KO;
+  CONST_SEARCH_MOVIES_OR_TV_SHOWS = Constants.SEARCH_MOVIES_OR_TV_SHOWS_KO;
+  CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_KO;
+  CONST_MOVIE_RESULT = Constants.MOVIE_RESULT_KO;
+  CONST_TV_RESULT = Constants.TV_RESULT_KO;
+}
 
 const Input = styled.input`
   all: unset;
@@ -28,14 +45,16 @@ const SearchPresenter = ({
 }) => (
   <>
     <Helmet>
-      <title>Search | 전자정부서비스</title>
+      <title>
+        {CONST_SEARCH} | {CONST_SERVICE_NAME}
+      </title>
     </Helmet>
     <Container>
       <Row>
         <Col>
           <Form onSubmit={handleSubmit}>
             <Input
-              placeholder="Search Movies or TV Shows..."
+              placeholder={CONST_SEARCH_MOVIES_OR_TV_SHOWS}
               value={searchTerm}
               onChange={updateTerm}
             />
@@ -45,7 +64,7 @@ const SearchPresenter = ({
           ) : (
             <>
               {movieResults && movieResults.length > 0 && (
-                <Section title="Movie Results">
+                <Section title={CONST_MOVIE_RESULT}>
                   {movieResults.map(movie => (
                     <Poster
                       key={movie.id}
@@ -60,7 +79,7 @@ const SearchPresenter = ({
                 </Section>
               )}
               {tvResults && tvResults.length > 0 && (
-                <Section title="TV Show Results">
+                <Section title={CONST_TV_RESULT}>
                   {tvResults.map(show => (
                     <Poster
                       key={show.id}
@@ -73,16 +92,16 @@ const SearchPresenter = ({
                   ))}
                 </Section>
               )}
-              {error && <Alert variant="danger" text={error} />}
+              {error && <Alert variant="danger">{error}</Alert>}
               {tvResults &&
                 movieResults &&
                 tvResults.length === 0 &&
                 movieResults.length === 0 && (
-                  <Alert variant="danger" text="Nothing found" />
+                  <Alert variant="danger">{CONST_NOTHING_FOUND}</Alert>
                 )}
             </>
           )}
-        </Col>{" "}
+        </Col>
       </Row>
     </Container>
   </>

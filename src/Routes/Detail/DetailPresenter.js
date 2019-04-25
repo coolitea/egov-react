@@ -1,13 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Videos from "Components/Videos";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
+import Loader from 'Components/Loader';
+import Videos from 'Components/Videos';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import * as Constants from 'Constants';
 
 const Backdrop = styled.div`
   position: absolute;
@@ -54,8 +55,8 @@ const DetailPresenter = ({ result, loading, error }) =>
     <>
       <Helmet>
         <title>
-          {result.original_title ? result.original_title : result.original_name}{" "}
-          | 전자정부서비스
+          {result.original_title ? result.original_title : result.original_name}{' '}
+          | {Constants.SERVICE_NAME_KO}
         </title>
       </Helmet>
       <Backdrop
@@ -68,7 +69,7 @@ const DetailPresenter = ({ result, loading, error }) =>
               src={
                 result.poster_path
                   ? `https://image.tmdb.org/t/p/original${result.poster_path}`
-                  : require("../../assets/noPosterSmall.png")
+                  : require('../../assets/noPosterSmall.png')
               }
               fluid
               rounded
@@ -89,7 +90,7 @@ const DetailPresenter = ({ result, loading, error }) =>
                 </Item>
                 <Divider>•</Divider>
                 <Item>
-                  {result.runtime ? result.runtime : result.episode_run_time[0]}{" "}
+                  {result.runtime ? result.runtime : result.episode_run_time[0]}{' '}
                   min
                 </Item>
                 <Divider>•</Divider>
