@@ -13,7 +13,7 @@ import Search from "Routes/Search";
 import Detail from "Routes/Detail";
 import Terms from "Routes/Terms";
 export default () => (
-  <Router basename="/egov-react">
+  <Router>
     <Header />
     <main>
       <Switch>
