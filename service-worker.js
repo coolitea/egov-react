@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.0/workbox-sw.js");
 
 importScripts(
-  "/egov-react/precache-manifest.a827bcab0b6dfc4c630232626be5095f.js"
+  "/egov-react/precache-manifest.c3f4e140dea6aae5e84ae71bf24e39d3.js"
 );
 
 self.addEventListener('message', (event) => {
