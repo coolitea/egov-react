@@ -12,7 +12,6 @@ import Alert from 'react-bootstrap/Alert';
 import * as Constants from 'Constants';
 
 let CONST_SERVICE_NAME = Constants.SERVICE_NAME_EN;
-let CONST_MOVIE = Constants.MOVIE_EN;
 let CONST_NOW_PLAYING = Constants.NOW_PLAYING_EN;
 let CONST_UPCOMING_MOVIE = Constants.UPCOMING_MOVIE_EN;
 let CONST_POPULAR_MOVIES = Constants.POPULAR_MOVIES_EN;
@@ -31,9 +30,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
   ) : (
     <>
       <Helmet>
-        <title>
-          {CONST_MOVIE} | {CONST_SERVICE_NAME}
-        </title>
+        <title>{CONST_SERVICE_NAME}</title>
       </Helmet>
       <Container>
         <Row>
