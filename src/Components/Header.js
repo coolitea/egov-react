@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -17,9 +17,15 @@ export default withRouter(({ location: { pathname } }) => (
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/">Movie</Nav.Link>
-          <Nav.Link href="/tv">TV</Nav.Link>
-          <Nav.Link href="/search">Search</Nav.Link>
+          <Nav.Link>
+            <Link to="/">Movie</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/tv">TV</Link>
+          </Nav.Link>
+          <Nav.Link>
+            <Link to="/search">Search</Link>
+          </Nav.Link>
           <NavDropdown title="Sample" id="collasible-nav-dropdown">
             <NavDropdown.Item href="sample/1-1">Action</NavDropdown.Item>
             <NavDropdown.Item href="sample/1-2">
