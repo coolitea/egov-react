@@ -4,6 +4,7 @@ export const LANGUAGE = 'KO';
 export const COPYRIGHT = '© 2019 coolitea';
 export const SERVICE_NAME_EN = 'e-Government Service';
 export const COMPANY_NAME_EN = 'coolitea';
+export const WELCOME_EN = 'Welcome to the e-Government Service!';
 export const MOVIE_EN = 'Movie';
 export const TV_EN = 'TV';
 export const SEARCH_EN = 'Search';
@@ -23,9 +24,12 @@ export const SEARCH_MOVIES_OR_TV_SHOWS_EN = 'Search Movies or TV Shows...';
 export const NOTHING_FOUND_EN = 'Nothing found';
 export const MOVIE_RESULT_EN = 'Movie Results';
 export const TV_RESULT_EN = 'TV Show Results';
+export const LOREM_IPSUM_EN =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
 export const SERVICE_NAME_KO = '전자정부서비스';
 export const COMPANY_NAME_KO = 'coolitea';
+export const WELCOME_KO = '안녕하세요! 전자정부서비스입니다.';
 export const MOVIE_KO = '영화';
 export const TV_KO = 'TV';
 export const SEARCH_KO = '검색';
@@ -46,3 +50,5 @@ export const SEARCH_MOVIES_OR_TV_SHOWS_KO =
 export const NOTHING_FOUND_KO = '검색된 결과가 없습니다.';
 export const MOVIE_RESULT_KO = '영화 결과';
 export const TV_RESULT_KO = 'TV 프로그램 결과';
+export const LOREM_IPSUM_KO =
+  '우리는 편리하고 안전한 금융투자 인프라를 제공하여 자본시장 발전에 기여합니다.';

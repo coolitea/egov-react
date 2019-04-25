@@ -35,7 +35,7 @@ export default withRouter(({ location: { pathname } }) => (
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link>
-            <Link to="/">{CONST_MOVIE}</Link>
+            <Link to="/movie">{CONST_MOVIE}</Link>
           </Nav.Link>
           <Nav.Link>
             <Link to="/tv">{CONST_TV}</Link>

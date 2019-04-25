@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Welcome from 'Components/Welcome';
 import Section from 'Components/Section';
 import Loader from 'Components/Loader';
 import Poster from 'Components/Poster';
@@ -25,7 +24,7 @@ if (Constants.LANGUAGE === 'KO') {
   CONST_POPULAR_MOVIES = Constants.POPULAR_MOVIES_KO;
 }
 
-const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
+const MoviePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
   loading ? (
     <Loader />
   ) : (
@@ -36,11 +35,6 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
         </title>
       </Helmet>
       <Container>
-        <Row>
-          <Col>
-            <Welcome />
-          </Col>
-        </Row>
         <Row>
           <Col>
             {nowPlaying && nowPlaying.length > 0 && (
@@ -98,7 +92,6 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
             )}
           </Col>
         </Row>
-
         <Row>
           <Col>{error && <Alert variant="danger">{error}</Alert>}</Col>
         </Row>
@@ -106,7 +99,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
     </>
   );
 
-HomePresenter.propTypes = {
+MoviePresenter.propTypes = {
   nowPlaying: PropTypes.array,
   popular: PropTypes.array,
   upcoming: PropTypes.array,
@@ -114,4 +107,4 @@ HomePresenter.propTypes = {
   error: PropTypes.string
 };
 
-export default HomePresenter;
+export default MoviePresenter;
