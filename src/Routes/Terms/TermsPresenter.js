@@ -34,7 +34,7 @@ const TermsPresenter = ({ loading, error }) =>
         </Row>
       </Container>
 
-      {error && <Alert variant="danger" text={error} />}
+      {error && <Alert variant="danger">{error}</Alert>}
     </>
   );
 

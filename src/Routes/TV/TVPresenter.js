@@ -82,7 +82,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
           </Col>
         </Row>
         <Row>
-          <Col>{error && <Alert variant="danger" text={error} />}</Col>
+          <Col>{error && <Alert variant="danger">{error}</Alert>}</Col>
         </Row>
       </Container>
     </>
