@@ -27,13 +27,19 @@ export default withRouter(({ location: { pathname } }) => (
             <Link to="/search">Search</Link>
           </Nav.Link>
           <NavDropdown title="Sample" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="sample/1-1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="sample/1-2">
-              Another action
+            <NavDropdown.Item>
+              <Link to="/sample/1-1">Action</Link>
             </NavDropdown.Item>
-            <NavDropdown.Item href="sample/1-2">Something</NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="/sample/1-2">Another action</Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="/sample/1-3">Something</Link>
+            </NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="sample/2">Separated link</NavDropdown.Item>
+            <NavDropdown.Item>
+              <Link to="/sample/2">Separated link</Link>
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Form inline>
