@@ -12,6 +12,7 @@ let CONST_ABOUT = Constants.ABOUT_EN;
 let CONST_MOVIE = Constants.MOVIE_EN;
 let CONST_TV = Constants.TV_EN;
 let CONST_SEARCH = Constants.SEARCH_EN;
+let CONST_SUPPORT = Constants.SUPPORT_EN;
 
 if (Constants.LANGUAGE === "KO") {
   CONST_SERVICE_NAME = Constants.SERVICE_NAME_KO;
@@ -19,6 +20,7 @@ if (Constants.LANGUAGE === "KO") {
   CONST_MOVIE = Constants.MOVIE_KO;
   CONST_TV = Constants.TV_KO;
   CONST_SEARCH = Constants.SEARCH_KO;
+  CONST_SUPPORT = Constants.SUPPORT_KO;
 }
 
 export default withRouter(({ location: { pathname } }) => (
@@ -39,8 +41,11 @@ export default withRouter(({ location: { pathname } }) => (
           <Navbar.Text>
             <Link to="/tv">{CONST_TV}</Link>
           </Navbar.Text>
-          <Navbar.Text variant="light">
+          <Navbar.Text>
             <Link to="/search">{CONST_SEARCH}</Link>
+          </Navbar.Text>
+          <Navbar.Text>
+            <Link to="/support">{CONST_SUPPORT}</Link>
           </Navbar.Text>
         </Nav>
       </Navbar.Collapse>
