@@ -54,6 +54,39 @@ https://www.themoviedb.org/
 - [x] TV Show Detail
 - [x] Movie Detail
 
+## 소스 프로그램 분류
+
+### 개발 대상 프로그램
+- /
+  - package.json
+  - README.md
+- public/
+  - index.html
+  - favicon.ico
+  - manifest.json
+  - (옵션) icons/
+- src/
+  - *.js
+  - Routes/
+  - Components/
+  - assets/
+    - images/
+
+### 빌드 시 서버에 관리하는 프로그램
+- node_modules/
+
+### 배포 대상 프로그램 
+- build/
+  - index.html
+  - service-workier.js
+  - static/
+  - manifest.json
+  - favicon.ico
+  - *-manifest.json
+  - *.js
+  - (옵션) icons/
+
+
 ## 실행 방법 요약
 
 ### 패키지 다운로드 
