@@ -10,20 +10,6 @@ import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
 import * as Constants from 'Constants';
 
-let CONST_SERVICE_NAME = Constants.SERVICE_NAME_EN;
-let CONST_TV = Constants.TV_EN;
-let CONST_TOP_RATED_SHOWS = Constants.TOP_RATED_SHOWS_EN;
-let CONST_POPULAR_SHOWS = Constants.POPULAR_SHOWS_EN;
-let CONST_AIRING_TODAY = Constants.AIRING_TODAY_EN;
-
-if (Constants.LANGUAGE === 'KO') {
-  CONST_SERVICE_NAME = Constants.SERVICE_NAME_KO;
-  CONST_TV = Constants.TV_KO;
-  CONST_TOP_RATED_SHOWS = Constants.TOP_RATED_SHOWS_KO;
-  CONST_POPULAR_SHOWS = Constants.POPULAR_SHOWS_KO;
-  CONST_AIRING_TODAY = Constants.AIRING_TODAY_KO;
-}
-
 const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
   loading ? (
     <Loader />
@@ -31,14 +17,14 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
     <>
       <Helmet>
         <title>
-          {CONST_TV} | {CONST_SERVICE_NAME}
+          {Constants.TV}| {Constants.SERVICE_NAME}
         </title>
       </Helmet>
       <Container>
         <Row>
           <Col>
             {topRated && topRated.length > 0 && (
-              <Section title={CONST_TOP_RATED_SHOWS}>
+              <Section title={Constants.TOP_RATED_SHOWS}>
                 {topRated.map(show => (
                   <Poster
                     key={show.id}
@@ -52,7 +38,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
               </Section>
             )}
             {popular && popular.length > 0 && (
-              <Section title={CONST_POPULAR_SHOWS}>
+              <Section title={Constants.POPULAR_SHOWS}>
                 {popular.map(show => (
                   <Poster
                     key={show.id}
@@ -66,7 +52,7 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) =>
               </Section>
             )}
             {airingToday && airingToday.length > 0 && (
-              <Section title={CONST_AIRING_TODAY}>
+              <Section title={Constants.AIRING_TODAY}>
                 {airingToday.map(show => (
                   <Poster
                     key={show.id}

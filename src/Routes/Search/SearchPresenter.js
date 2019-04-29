@@ -12,22 +12,6 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import * as Constants from 'Constants';
 
-let CONST_SERVICE_NAME = Constants.SERVICE_NAME_EN;
-let CONST_SEARCH = Constants.SEARCH_EN;
-let CONST_SEARCH_MOVIES_OR_TV_SHOWS = Constants.SEARCH_MOVIES_OR_TV_SHOWS_EN;
-let CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_EN;
-let CONST_MOVIE_RESULT = Constants.MOVIE_RESULT_EN;
-let CONST_TV_RESULT = Constants.TV_RESULT_EN;
-
-if (Constants.LANGUAGE === 'KO') {
-  CONST_SERVICE_NAME = Constants.SERVICE_NAME_KO;
-  CONST_SEARCH = Constants.SEARCH_KO;
-  CONST_SEARCH_MOVIES_OR_TV_SHOWS = Constants.SEARCH_MOVIES_OR_TV_SHOWS_KO;
-  CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_KO;
-  CONST_MOVIE_RESULT = Constants.MOVIE_RESULT_KO;
-  CONST_TV_RESULT = Constants.TV_RESULT_KO;
-}
-
 const Input = styled.input`
   all: unset;
   font-size: 28px;
@@ -46,7 +30,7 @@ const SearchPresenter = ({
   <>
     <Helmet>
       <title>
-        {CONST_SEARCH} | {CONST_SERVICE_NAME}
+        {Constants.SEARCH} | {Constants.SERVICE_NAME}
       </title>
     </Helmet>
     <Container>
@@ -54,7 +38,7 @@ const SearchPresenter = ({
         <Col>
           <Form onSubmit={handleSubmit}>
             <Input
-              placeholder={CONST_SEARCH_MOVIES_OR_TV_SHOWS}
+              placeholder={Constants.SEARCH_MOVIES_OR_TV_SHOWS}
               value={searchTerm}
               onChange={updateTerm}
             />
@@ -64,7 +48,7 @@ const SearchPresenter = ({
           ) : (
             <>
               {movieResults && movieResults.length > 0 && (
-                <Section title={CONST_MOVIE_RESULT}>
+                <Section title={Constants.MOVIE_RESULT}>
                   {movieResults.map(movie => (
                     <Poster
                       key={movie.id}
@@ -79,7 +63,7 @@ const SearchPresenter = ({
                 </Section>
               )}
               {tvResults && tvResults.length > 0 && (
-                <Section title={CONST_TV_RESULT}>
+                <Section title={Constants.TV_RESULT}>
                   {tvResults.map(show => (
                     <Poster
                       key={show.id}
@@ -97,7 +81,7 @@ const SearchPresenter = ({
                 movieResults &&
                 tvResults.length === 0 &&
                 movieResults.length === 0 && (
-                  <Alert variant="danger">{CONST_NOTHING_FOUND}</Alert>
+                  <Alert variant="danger">{Constants.NOTHING_FOUND}</Alert>
                 )}
             </>
           )}

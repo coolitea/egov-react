@@ -1,13 +1,7 @@
-import React from "react";
-import DetailPresenter from "./DetailPresenter";
-import { moviesApi, tvApi } from "api";
-import * as Constants from "Constants";
-
-let CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_EN;
-
-if (Constants.LANGUAGE === "KO") {
-  CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_KO;
-}
+import React from 'react';
+import DetailPresenter from './DetailPresenter';
+import { moviesApi, tvApi } from 'api';
+import * as Constants from 'Constants';
 
 export default class extends React.Component {
   constructor(props) {
@@ -20,7 +14,7 @@ export default class extends React.Component {
       result: null,
       error: null,
       loading: true,
-      isMovie: pathname.includes("/movie/")
+      isMovie: pathname.includes('/movie/')
     };
   }
 
@@ -35,7 +29,7 @@ export default class extends React.Component {
     const { isMovie } = this.state;
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
-      return push("/");
+      return push('/');
     }
 
     let result = null;
@@ -46,7 +40,7 @@ export default class extends React.Component {
         ({ data: result } = await tvApi.showDetail(parsedId));
       }
     } catch {
-      this.setState({ error: { CONST_NOTHING_FOUND } });
+      this.setState({ error: Constants.NOTHING_FOUND });
     } finally {
       this.setState({ loading: false, result });
     }

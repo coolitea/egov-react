@@ -56,7 +56,7 @@ const DetailPresenter = ({ result, loading, error }) =>
       <Helmet>
         <title>
           {result.original_title ? result.original_title : result.original_name}{' '}
-          | {Constants.SERVICE_NAME_KO}
+          | {Constants.SERVICE_NAME}
         </title>
       </Helmet>
       <Backdrop

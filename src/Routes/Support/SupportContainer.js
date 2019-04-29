@@ -1,12 +1,6 @@
-import React from "react";
-import SupportPresenter from "./SupportPresenter";
-import * as Constants from "Constants";
-
-let CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_EN;
-
-if (Constants.LANGUAGE === "KO") {
-  CONST_NOTHING_FOUND = Constants.NOTHING_FOUND_KO;
-}
+import React from 'react';
+import SupportPresenter from './SupportPresenter';
+import * as Constants from 'Constants';
 
 export default class extends React.Component {
   state = {
@@ -18,7 +12,7 @@ export default class extends React.Component {
     try {
     } catch {
       this.setState({
-        error: CONST_NOTHING_FOUND
+        error: Constants.NOTHING_FOUND
       });
     } finally {
       this.setState({ loading: false });

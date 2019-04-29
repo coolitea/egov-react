@@ -1,24 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Accordion from "react-bootstrap/Accordion";
-import Alert from "react-bootstrap/Alert";
-
-import * as Constants from "Constants";
-
-let CONST_SUPPORT = Constants.SUPPORT_EN;
-let CONST_SERVICE_NAME = Constants.SERVICE_NAME_EN;
-
-if (Constants.LANGUAGE === "KO") {
-  CONST_SERVICE_NAME = Constants.SERVICE_NAME_KO;
-  CONST_SUPPORT = Constants.SUPPORT_KO;
-}
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import Loader from 'Components/Loader';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Accordion from 'react-bootstrap/Accordion';
+import Alert from 'react-bootstrap/Alert';
+import * as Constants from 'Constants';
 
 const SupportPresenter = ({ loading, error }) =>
   loading ? (
@@ -27,7 +18,7 @@ const SupportPresenter = ({ loading, error }) =>
     <>
       <Helmet>
         <title>
-          {CONST_SUPPORT} | {CONST_SERVICE_NAME}
+          {Constants.SUPPORT}|{Constants.SERVICE_NAME}
         </title>
       </Helmet>
       <Container>
@@ -87,20 +78,6 @@ const SupportPresenter = ({ loading, error }) =>
           </Col>
         </Row>
       </Container>
-      {/* <Container>
-        <Row>
-          <Col>
-            <h1>직원 검색</h1>
-          </Col>
-        </Row>
-      </Container>
-      <Container>
-        <Row>
-          <Col>
-            <h1>오시는 길</h1>
-          </Col>
-        </Row>
-      </Container> */}
 
       {error && <Alert variant="danger">{error}</Alert>}
     </>
