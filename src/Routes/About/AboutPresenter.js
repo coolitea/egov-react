@@ -1,36 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import Loader from 'Components/Loader';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Alert from 'react-bootstrap/Alert';
-import ServiceImage from 'assets/images/about-service_320.jpg';
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
-import * as Constants from 'Constants';
-import bizMagager from 'assets/images/team/biz-manager_320.jpg';
-import itMagager from 'assets/images/team/it-manager_320.jpg';
-import bizStaff from 'assets/images/team/biz-staff_320.jpg';
-import itStaff from 'assets/images/team/it-staff_320.jpg';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import Loader from "Components/Loader";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
+import ServiceImage from "assets/images/about-service_320.jpg";
+import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
+import * as Constants from "Constants";
+// import * as ABOUT from "Routes/ABOUT";
+import bizMagager from "assets/images/team/biz-manager_320.jpg";
+import itMagager from "assets/images/team/it-manager_320.jpg";
+import bizStaff from "assets/images/team/biz-staff_320.jpg";
+import itStaff from "assets/images/team/it-staff_320.jpg";
+import { useT } from "../../Components/context";
 
-// let CONST_ABOUT = Constants.ABOUT_EN;
-// let CONST_SERVICE_NAME = Constants.SERVICE_NAME_EN;
+const AboutPresenter = ({ loading, error }) => {
+  const t = useT();
 
-// if (Constants.LANGUAGE === "KO") {
-//   CONST_SERVICE_NAME = Constants.SERVICE_NAME_KO;
-//   CONST_ABOUT = Constants.ABOUT_KO;
-// }
-
-const AboutPresenter = ({ loading, error }) =>
-  loading ? (
+  return loading ? (
     <Loader />
   ) : (
     <>
       <Helmet>
         <title>
-          {Constants.ABOUT} | {Constants.SERVICE_NAME}
+          {t(Constants.ABOUT)} | {t(Constants.SERVICE_NAME)}
         </title>
       </Helmet>
       <Container>
@@ -39,11 +35,8 @@ const AboutPresenter = ({ loading, error }) =>
             <Card>
               <Card.Img src={ServiceImage} alt="Card image" width="50%" />
               <Card.ImgOverlay>
-                <Card.Title>서비스 소개</Card.Title>
-                <Card.Text>
-                  우리는 편리하고 안전한 금융투자 인프라를 제공하여 자본시장
-                  발전에 기여합니다.
-                </Card.Text>
+                <Card.Title>{t(Constants.ABOUT_SERVICE)}</Card.Title>
+                <Card.Text>{t(Constants.WHAT_WE_DO)}</Card.Text>
               </Card.ImgOverlay>
             </Card>
           </Col>
@@ -84,6 +77,7 @@ const AboutPresenter = ({ loading, error }) =>
       {error && <Alert variant="danger">{error}</Alert>}
     </>
   );
+};
 
 AboutPresenter.propTypes = {
   loading: PropTypes.bool.isRequired,
