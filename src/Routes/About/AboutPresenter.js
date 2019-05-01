@@ -1,21 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Alert from "react-bootstrap/Alert";
-import ServiceImage from "assets/images/about-service_320.jpg";
-import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
-import * as Constants from "Constants";
-// import * as ABOUT from "Routes/ABOUT";
-import bizMagager from "assets/images/team/biz-manager_320.jpg";
-import itMagager from "assets/images/team/it-manager_320.jpg";
-import bizStaff from "assets/images/team/biz-staff_320.jpg";
-import itStaff from "assets/images/team/it-staff_320.jpg";
-import { useT } from "../../Components/context";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import Loader from 'Components/Loader';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import * as Constants from 'Constants';
+import ceo from 'assets/images/team/ceo_320.jpg';
+import cfo from 'assets/images/team/cfo_320.jpg';
+import cio from 'assets/images/team/cio_320.jpg';
+import coo from 'assets/images/team/coo_320.jpg';
+import cso from 'assets/images/team/cso_320.jpg';
+import cto from 'assets/images/team/cto_320.jpg';
+import { useT } from '../../Components/context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+const fontAwesomeStyle = {
+  stroke: 'darkGray',
+  strokeWidth: '20',
+  marginLeft: '20px'
+};
 
 const AboutPresenter = ({ loading, error }) => {
   const t = useT();
@@ -29,47 +36,125 @@ const AboutPresenter = ({ loading, error }) => {
           {t(Constants.ABOUT)} | {t(Constants.SERVICE_NAME)}
         </title>
       </Helmet>
-      <Container>
-        <Row>
-          <Col>
-            <Card>
-              <Card.Img src={ServiceImage} alt="Card image" width="50%" />
-              <Card.ImgOverlay>
-                <Card.Title>{t(Constants.ABOUT_SERVICE)}</Card.Title>
-                <Card.Text>{t(Constants.WHAT_WE_DO)}</Card.Text>
-              </Card.ImgOverlay>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
 
       <Container>
         <Row>
           <Col>
-            <h1>팀 소개 </h1>
-            <p>세계 일류 종합증권서비스를 제공하는 전문가 그룹을 소개합니다.</p>
+            <div className="h1">{t(Constants.ABOUT_US)}</div>
           </Col>
         </Row>
         <Row>
           <Col xs={6} md={3}>
-            <Image src={bizMagager} roundedCircle fluid />
-            <h2>김신뢰</h2>
-            <h4 className="text-secondary">비즈니스 팀장</h4>
+            <Image src={ceo} roundedCircle fluid />
+            <h2>{t(Constants.CEO_NAME)}</h2>
+            <h4 className="text-secondary">{t(Constants.CEO)}</h4>
           </Col>
           <Col xs={6} md={3}>
-            <Image src={itMagager} roundedCircle fluid />
-            <h2>이따뜻</h2>
-            <h4 className="text-secondary">IT 팀장</h4>
+            <Image src={cfo} roundedCircle fluid />
+            <h2>{t(Constants.COO_NAME)}</h2>
+            <h4 className="text-secondary">{t(Constants.COO)}</h4>
           </Col>
           <Col xs={6} md={3}>
-            <Image src={bizStaff} roundedCircle fluid />
-            <h2>최책임</h2>
-            <h4 className="text-secondary">비즈니스 팀원</h4>
+            <Image src={cio} roundedCircle fluid />
+            <h2>{t(Constants.CFO_NAME)}</h2>
+            <h4 className="text-secondary">{t(Constants.CFO)}</h4>
           </Col>
           <Col xs={6} md={3}>
-            <Image src={itStaff} roundedCircle fluid />
-            <h3>박전문</h3>
-            <h4 className="text-secondary">IT 팀원</h4>
+            <Image src={coo} roundedCircle fluid />
+            <h3>{t(Constants.CSO_NAME)}</h3>
+            <h4 className="text-secondary">{t(Constants.CSO)}</h4>
+          </Col>
+          <Col xs={6} md={3}>
+            <Image src={cso} roundedCircle fluid />
+            <h2>{t(Constants.CIO_NAME)}</h2>
+            <h4 className="text-secondary">{t(Constants.CIO)}</h4>
+          </Col>
+          <Col xs={6} md={3}>
+            <Image src={cto} roundedCircle fluid />
+            <h3>{t(Constants.CTO_NAME)}</h3>
+            <h4 className="text-secondary">{t(Constants.CTO)}</h4>
+          </Col>
+        </Row>
+      </Container>
+      <hr />
+      <Container>
+        <Row>
+          <Col>
+            <div className="h1">{t(Constants.OUR_NUMBERS)}</div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <FontAwesomeIcon
+              icon="user-friends"
+              size="3x"
+              color="#0984e3"
+              style={fontAwesomeStyle}
+            />
+            <Card>
+              <Card.Body>
+                <Card.Title>{t(Constants.NUMBER_OF_PARTICIPANTS)}</Card.Title>
+                <Card.Text>
+                  {t(Constants.NUMBER_OF_PARTICIPANTS_DETAIL)}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <FontAwesomeIcon
+              icon="piggy-bank"
+              size="3x"
+              color="#fd79a8"
+              style={fontAwesomeStyle}
+            />
+            <Card>
+              <Card.Body>
+                <Card.Title>{t(Constants.AMOUNT_OF_SECURITIES)}</Card.Title>
+                <Card.Text>
+                  {t(Constants.AMOUNT_OF_SECURITIES_DETAIL)}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <FontAwesomeIcon
+              icon="comment-dollar"
+              size="3x"
+              color="#fdcb6e"
+              style={fontAwesomeStyle}
+            />
+            <Card>
+              <Card.Body>
+                <Card.Title>{t(Constants.AMOUNT_OF_SAVING)}</Card.Title>
+                <Card.Text>{t(Constants.AMOUNT_OF_SAVING_DETAIL)}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+      <hr />
+      <Container>
+        <Row>
+          <Col>
+            <div className="h1">{t(Constants.WHAT_GUIDES_US)}</div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Card className="text-center ">
+              <Card.Body>
+                <Card.Title>{t(Constants.OUR_MISSION)}</Card.Title>
+                <Card.Text>{t(Constants.OUR_MISSION_DETAIL)}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card className="text-center">
+              <Card.Body>
+                <Card.Title>{t(Constants.OUR_VISION)}</Card.Title>
+                <Card.Text>{t(Constants.OUR_VISION_DETAIL)}</Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>

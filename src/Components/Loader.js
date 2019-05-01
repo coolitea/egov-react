@@ -7,6 +7,11 @@ import Spinner from 'react-bootstrap/Spinner';
 import * as Constants from 'Constants';
 import { useT } from './context';
 
+var loadingStyle = {
+  aligntment: 'center',
+  marginTop: '50px'
+};
+
 export default () => {
   const t = useT();
 
@@ -21,7 +26,11 @@ export default () => {
         <Row className="justify-content-center">
           <Col />
           <Col>
-            <Spinner animation="grow" role="status" variant="success">
+            <Spinner
+              animation="grow"
+              role="status"
+              variant="success"
+              style={loadingStyle}>
               <span className="sr-only">{t(Constants.LOADING)} ...</span>
             </Spinner>
           </Col>

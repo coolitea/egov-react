@@ -1,5 +1,7 @@
-import React from "react";
-import TermsPresenter from "./TermsPresenter";
+import React from 'react';
+import TermsPresenter from './TermsPresenter';
+import * as Constants from 'Constants';
+// import constants from 'jest-haste-map/build/constants';
 
 export default class extends React.Component {
   state = {
@@ -11,7 +13,7 @@ export default class extends React.Component {
     try {
     } catch {
       this.setState({
-        error: "Can't find TV information."
+        error: Constants.NOTHING_FOUND
       });
     } finally {
       this.setState({ loading: false });

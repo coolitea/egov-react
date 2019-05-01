@@ -1,6 +1,7 @@
 import React from 'react';
 import MoviePresenter from './MoviePresenter';
 import { moviesApi } from 'api';
+import * as Constants from 'Constants';
 
 export default class extends React.Component {
   state = {
@@ -30,7 +31,7 @@ export default class extends React.Component {
       });
     } catch {
       this.setState({
-        error: "Can't find movie information."
+        error: Constants.NOTHING_FOUND
       });
     } finally {
       this.setState({ loading: false });

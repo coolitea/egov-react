@@ -1,6 +1,7 @@
 import React from 'react';
 import TVPresenter from './TVPresenter';
 import { tvApi } from 'api';
+import * as Constants from 'Constants';
 
 export default class extends React.Component {
   state = {
@@ -25,7 +26,7 @@ export default class extends React.Component {
       this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({
-        error: "Can't find TV information."
+        error: Constants.NOTHING_FOUND
       });
     } finally {
       this.setState({ loading: false });

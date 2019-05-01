@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchPresenter from './SearchPresenter';
 import { moviesApi, tvApi } from 'api';
+import * as Constants from 'Constants';
 
 export default class extends React.Component {
   state = {
@@ -43,7 +44,7 @@ export default class extends React.Component {
         tvResults
       });
     } catch {
-      this.setState({ error: "Can't find results." });
+      this.setState({ error: Constants.NOTHING_FOUND });
     } finally {
       this.setState({ loading: false });
     }

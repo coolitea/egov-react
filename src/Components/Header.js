@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import styled from "styled-components";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import { useT } from "./context";
-import * as Constants from "Constants";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import styled from 'styled-components';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { useT } from './context';
+import * as Constants from 'Constants';
 
 const Header = styled.header``;
 
@@ -18,8 +18,7 @@ export default withRouter(({ location: { pathname } }) => {
         collapseOnSelect
         expand="lg"
         fixed="top"
-        className="justivy-contents-between"
-      >
+        className="justivy-contents-between">
         <Navbar.Brand to="/">
           <Link to="/">{t(Constants.SERVICE_NAME)}</Link>
         </Navbar.Brand>

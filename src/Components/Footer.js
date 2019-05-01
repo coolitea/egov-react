@@ -6,10 +6,11 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 import { useSetLang, useT } from './context';
-
 import * as Constants from 'Constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = styled.footer``;
+
 let language = Constants.LANGUAGES.ENG;
 
 export default withRouter(({ location: { pathname } }) => {
@@ -34,7 +35,7 @@ export default withRouter(({ location: { pathname } }) => {
         expand="lg"
         variant="dark"
         fixed="bottom">
-        <Navbar.Brand> {t(Constants.COPYRIGHT)} </Navbar.Brand>
+        <Navbar.Brand>{t(Constants.COPYRIGHT)}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Navbar.Text>
@@ -84,12 +85,34 @@ export default withRouter(({ location: { pathname } }) => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          <Nav>
+            <Navbar.Text>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/pages/한국예탁결제원/491409054328717">
+                <FontAwesomeIcon icon={['fab', 'facebook']} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCCkOHu8cifMUsfrlv2tBB_A">
+                <FontAwesomeIcon icon={['fab', 'youtube']} />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/coolitea/egov-react">
+                <FontAwesomeIcon icon={['fab', 'github']} />
+              </a>
+            </Navbar.Text>
+          </Nav>
+          <Nav>
+            <Button variant="secondary" onClick={handleLanguage}>
+              {language === Constants.LANGUAGES.ENG ? '한 글' : 'English'}
+            </Button>
+          </Nav>
         </Navbar.Collapse>
-        <Nav>
-          <Button variant="secondary" onClick={handleLanguage}>
-            {language === Constants.LANGUAGES.ENG ? '한글' : 'ENG'}
-          </Button>
-        </Nav>
       </Navbar>
     </Footer>
   );
