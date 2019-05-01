@@ -45,13 +45,22 @@ export default withRouter(({ location: { pathname } }) => {
               title={t(Constants.FAMILY_SITE)}
               id="collasible-nav-dropdown"
               drop="up">
-              <NavDropdown.Item href="http://www.ksd.or.kr" target="_blank">
+              <NavDropdown.Item
+                href="http://www.ksd.or.kr"
+                target="_blank"
+                rel="noopener">
                 KSD
               </NavDropdown.Item>
-              <NavDropdown.Item href="https://evote.ksd.or.kr" target="_blank">
+              <NavDropdown.Item
+                href="https://evote.ksd.or.kr"
+                target="_blank"
+                rel="noopener">
                 K-eVote
               </NavDropdown.Item>
-              <NavDropdown.Item href="http://www.seibro.or.kr" target="_blank">
+              <NavDropdown.Item
+                href="http://www.seibro.or.kr"
+                target="_blank"
+                rel="noopener">
                 Seibro
               </NavDropdown.Item>
             </NavDropdown>
@@ -61,10 +70,16 @@ export default withRouter(({ location: { pathname } }) => {
               title={t(Constants.RELATED_SITE)}
               id="collasible-nav-dropdown"
               drop="up">
-              <NavDropdown.Item href="http://www.fsc.go.kr/" target="_blank">
+              <NavDropdown.Item
+                href="http://www.fsc.go.kr/"
+                target="_blank"
+                rel="noopener">
                 금융위원회(FSC)
               </NavDropdown.Item>
-              <NavDropdown.Item href="http://dart.fss.or.kr/" target="_blank">
+              <NavDropdown.Item
+                href="http://dart.fss.or.kr/"
+                target="_blank"
+                rel="noopener">
                 전자공시시스템(Dart)
               </NavDropdown.Item>
             </NavDropdown>
