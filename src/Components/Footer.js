@@ -1,29 +1,33 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
-import styled from 'styled-components';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
-import { useSetLang, useT } from './context';
-import * as Constants from 'Constants';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
+import styled from "styled-components";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { useSetLang, useT } from "./context";
+import * as Constants from "Constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = styled.footer``;
 
-let language = Constants.LANGUAGES.ENG;
+let language = Constants.LANGUAGES.EN;
 
 export default withRouter(({ location: { pathname } }) => {
   const setLang = useSetLang();
   const t = useT();
 
-  function handleLanguage(e) {
-    if (Constants.LANGUAGES.ENG === language) {
-      setLang(Constants.LANGUAGES.KOR);
-      language = Constants.LANGUAGES.KOR;
+  function handleLanguage(eventKey) {
+    if (language === eventKey) {
     } else {
-      setLang(Constants.LANGUAGES.ENG);
-      language = Constants.LANGUAGES.ENG;
+      if (eventKey === Constants.LANGUAGES.EN) {
+        setLang(Constants.LANGUAGES.EN);
+      } else if (eventKey === Constants.LANGUAGES.KO) {
+        setLang(Constants.LANGUAGES.KO);
+      } else if (eventKey === Constants.LANGUAGES.ID) {
+        setLang(Constants.LANGUAGES.ID);
+      }
+
+      language = eventKey;
     }
   }
 
@@ -34,7 +38,8 @@ export default withRouter(({ location: { pathname } }) => {
         collapseOnSelect
         expand="lg"
         variant="dark"
-        fixed="bottom">
+        fixed="bottom"
+      >
         <Navbar.Brand>{t(Constants.COPYRIGHT)}</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -45,23 +50,27 @@ export default withRouter(({ location: { pathname } }) => {
             <NavDropdown
               title={t(Constants.FAMILY_SITE)}
               id="collasible-nav-dropdown"
-              drop="up">
+              drop="up"
+            >
               <NavDropdown.Item
                 href="http://www.ksd.or.kr"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+              >
                 KSD
               </NavDropdown.Item>
               <NavDropdown.Item
                 href="https://evote.ksd.or.kr"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+              >
                 K-eVote
               </NavDropdown.Item>
               <NavDropdown.Item
                 href="http://www.seibro.or.kr"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+              >
                 Seibro
               </NavDropdown.Item>
             </NavDropdown>
@@ -70,18 +79,38 @@ export default withRouter(({ location: { pathname } }) => {
             <NavDropdown
               title={t(Constants.RELATED_SITE)}
               id="collasible-nav-dropdown"
-              drop="up">
+              drop="up"
+            >
               <NavDropdown.Item
                 href="http://www.fsc.go.kr/"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+              >
                 금융위원회(FSC)
               </NavDropdown.Item>
               <NavDropdown.Item
                 href="http://dart.fss.or.kr/"
                 target="_blank"
-                rel="noopener">
+                rel="noopener"
+              >
                 전자공시시스템(Dart)
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav activeKey={language} onSelect={k => handleLanguage(k)}>
+            <NavDropdown
+              title={<FontAwesomeIcon icon="language" />}
+              id="collasible-nav-dropdown"
+              drop="up"
+            >
+              <NavDropdown.Item eventKey={Constants.LANGUAGES.EN}>
+                English
+              </NavDropdown.Item>
+              <NavDropdown.Item eventKey={Constants.LANGUAGES.KO}>
+                한 글
+              </NavDropdown.Item>
+              <NavDropdown.Item eventKey={Constants.LANGUAGES.ID}>
+                Indonesian
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
@@ -90,27 +119,25 @@ export default withRouter(({ location: { pathname } }) => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.facebook.com/pages/한국예탁결제원/491409054328717">
-                <FontAwesomeIcon icon={['fab', 'facebook']} />
+                href="https://www.facebook.com/pages/한국예탁결제원/491409054328717"
+              >
+                <FontAwesomeIcon icon={["fab", "facebook"]} />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.youtube.com/channel/UCCkOHu8cifMUsfrlv2tBB_A">
-                <FontAwesomeIcon icon={['fab', 'youtube']} />
+                href="https://www.youtube.com/channel/UCCkOHu8cifMUsfrlv2tBB_A"
+              >
+                <FontAwesomeIcon icon={["fab", "youtube"]} />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/coolitea/egov-react">
-                <FontAwesomeIcon icon={['fab', 'github']} />
+                href="https://github.com/coolitea/egov-react"
+              >
+                <FontAwesomeIcon icon={["fab", "github"]} />
               </a>
             </Navbar.Text>
-          </Nav>
-          <Nav>
-            <Button variant="secondary" onClick={handleLanguage}>
-              {language === Constants.LANGUAGES.ENG ? '한 글' : 'English'}
-            </Button>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

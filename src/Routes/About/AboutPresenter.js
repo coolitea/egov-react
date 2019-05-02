@@ -1,27 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import Loader from 'Components/Loader';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Alert from 'react-bootstrap/Alert';
-import Card from 'react-bootstrap/Card';
-import Image from 'react-bootstrap/Image';
-import * as Constants from 'Constants';
-import ceo from 'assets/images/team/ceo_320.jpg';
-import cfo from 'assets/images/team/cfo_320.jpg';
-import cio from 'assets/images/team/cio_320.jpg';
-import coo from 'assets/images/team/coo_320.jpg';
-import cso from 'assets/images/team/cso_320.jpg';
-import cto from 'assets/images/team/cto_320.jpg';
-import { useT } from '../../Components/context';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import Loader from "Components/Loader";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
+import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
+import * as Constants from "Constants";
+import ceo from "assets/images/team/ceo_320.jpg";
+import cfo from "assets/images/team/cfo_320.jpg";
+import cio from "assets/images/team/cio_320.jpg";
+import coo from "assets/images/team/coo_320.jpg";
+import cso from "assets/images/team/cso_320.jpg";
+import cto from "assets/images/team/cto_320.jpg";
+import { useT } from "../../Components/context";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const fontAwesomeStyle = {
-  stroke: 'darkGray',
-  strokeWidth: '20',
-  marginLeft: '20px'
+  stroke: "darkGray",
+  strokeWidth: "20",
+  marginLeft: "20px"
 };
 
 const AboutPresenter = ({ loading, error }) => {
@@ -84,7 +84,7 @@ const AboutPresenter = ({ loading, error }) => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={12} md={4}>
             <FontAwesomeIcon
               icon="user-friends"
               size="3x"
@@ -100,7 +100,7 @@ const AboutPresenter = ({ loading, error }) => {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col xs={12} md={4}>
             <FontAwesomeIcon
               icon="piggy-bank"
               size="3x"
@@ -116,7 +116,7 @@ const AboutPresenter = ({ loading, error }) => {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col xs={12} md={4}>
             <FontAwesomeIcon
               icon="comment-dollar"
               size="3x"
@@ -140,7 +140,7 @@ const AboutPresenter = ({ loading, error }) => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col xs={12} md={4}>
             <Card className="text-center ">
               <Card.Body>
                 <Card.Title>{t(Constants.OUR_MISSION)}</Card.Title>
@@ -148,7 +148,7 @@ const AboutPresenter = ({ loading, error }) => {
               </Card.Body>
             </Card>
           </Col>
-          <Col>
+          <Col xs={12} md={4}>
             <Card className="text-center">
               <Card.Body>
                 <Card.Title>{t(Constants.OUR_VISION)}</Card.Title>
