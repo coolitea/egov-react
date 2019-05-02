@@ -17,7 +17,7 @@ library.add(fab, faLanguage, faUserFriends, faPiggyBank, faCommentDollar);
 
 function App() {
   return (
-    <Lang defaultLang={Constants.LANGUAGES.EN} translations={translations}>
+    <Lang defaultLang={Constants.LANGUAGES.EN.code} translations={translations}>
       <Router />
       <GlobalStyles />
     </Lang>

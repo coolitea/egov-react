@@ -10,24 +10,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = styled.footer``;
 
-let language = Constants.LANGUAGES.EN;
+let language = {
+  code: Constants.LANGUAGES.EN.code,
+  show: Constants.LANGUAGES.EN.show
+};
 
 export default withRouter(({ location: { pathname } }) => {
   const setLang = useSetLang();
   const t = useT();
 
   function handleLanguage(eventKey) {
-    if (language === eventKey) {
+    if (language.code === eventKey) {
     } else {
-      if (eventKey === Constants.LANGUAGES.EN) {
-        setLang(Constants.LANGUAGES.EN);
-      } else if (eventKey === Constants.LANGUAGES.KO) {
-        setLang(Constants.LANGUAGES.KO);
-      } else if (eventKey === Constants.LANGUAGES.ID) {
-        setLang(Constants.LANGUAGES.ID);
+      if (eventKey === Constants.LANGUAGES.EN.code) {
+        setLang(Constants.LANGUAGES.EN.code);
+        language = Constants.LANGUAGES.EN;
+      } else if (eventKey === Constants.LANGUAGES.KO.code) {
+        setLang(Constants.LANGUAGES.KO.code);
+        language = Constants.LANGUAGES.KO;
+      } else if (eventKey === Constants.LANGUAGES.ID.code) {
+        setLang(Constants.LANGUAGES.ID.code);
+        language = Constants.LANGUAGES.ID;
       }
-
-      language = eventKey;
     }
   }
 
@@ -97,20 +101,20 @@ export default withRouter(({ location: { pathname } }) => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav activeKey={language} onSelect={k => handleLanguage(k)}>
+          <Nav activeKey={language.code} onSelect={k => handleLanguage(k)}>
             <NavDropdown
-              title={<FontAwesomeIcon icon="language" />}
+              title={language.show}
               id="collasible-nav-dropdown"
               drop="up"
             >
-              <NavDropdown.Item eventKey={Constants.LANGUAGES.EN}>
-                English
+              <NavDropdown.Item eventKey={Constants.LANGUAGES.EN.code}>
+                {Constants.LANGUAGES.EN.show}
               </NavDropdown.Item>
-              <NavDropdown.Item eventKey={Constants.LANGUAGES.KO}>
-                한 글
+              <NavDropdown.Item eventKey={Constants.LANGUAGES.KO.code}>
+                {Constants.LANGUAGES.KO.show}
               </NavDropdown.Item>
-              <NavDropdown.Item eventKey={Constants.LANGUAGES.ID}>
-                Indonesian
+              <NavDropdown.Item eventKey={Constants.LANGUAGES.ID.code}>
+                {Constants.LANGUAGES.ID.show}
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

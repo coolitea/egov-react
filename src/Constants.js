@@ -1,7 +1,7 @@
 export const LANGUAGES = {
-  EN: "en",
-  KO: "ko",
-  ID: "id"
+  EN: { code: "en", show: "English" },
+  KO: { code: "ko", show: "한글" },
+  ID: { code: "id", show: "Indonesian" }
 };
 
 export const COPYRIGHT = "© 2019 coolitea";
