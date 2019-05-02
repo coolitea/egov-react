@@ -1,30 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import Loader from 'Components/Loader';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion';
-import Alert from 'react-bootstrap/Alert';
-import * as Constants from 'Constants';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import Loader from "Components/Loader";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Accordion from "react-bootstrap/Accordion";
+import Alert from "react-bootstrap/Alert";
+import * as Constants from "Constants";
+import { useT } from "Components/context";
 
-const SupportPresenter = ({ loading, error }) =>
-  loading ? (
+const SupportPresenter = ({ loading, error }) => {
+  const t = useT();
+
+  return loading ? (
     <Loader />
   ) : (
     <>
       <Helmet>
         <title>
-          {Constants.SUPPORT}|{Constants.SERVICE_NAME}
+          {t(Constants.SUPPORT)}|{t(Constants.SERVICE_NAME)}
         </title>
       </Helmet>
       <Container>
         <Row>
           <Col>
-            <h1>자주 묻는 질문</h1>
+            <h1>{t(Constants.FAQ)}</h1>
           </Col>
         </Row>
         <Row>
@@ -82,6 +85,7 @@ const SupportPresenter = ({ loading, error }) =>
       {error && <Alert variant="danger">{error}</Alert>}
     </>
   );
+};
 
 SupportPresenter.propTypes = {
   loading: PropTypes.bool.isRequired,

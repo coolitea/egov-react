@@ -15,7 +15,7 @@ import cio from "assets/images/team/cio_320.jpg";
 import coo from "assets/images/team/coo_320.jpg";
 import cso from "assets/images/team/cso_320.jpg";
 import cto from "assets/images/team/cto_320.jpg";
-import { useT } from "../../Components/context";
+import { useT } from "Components/context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const fontAwesomeStyle = {

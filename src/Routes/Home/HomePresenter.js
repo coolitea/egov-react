@@ -1,23 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Welcome from 'Components/Welcome';
-import Section from 'Components/Section';
-import Loader from 'Components/Loader';
-import Poster from 'Components/Poster';
-import Helmet from 'react-helmet';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Alert from 'react-bootstrap/Alert';
-import * as Constants from 'Constants';
+import React from "react";
+import PropTypes from "prop-types";
+import Welcome from "Components/Welcome";
+import Section from "Components/Section";
+import Loader from "Components/Loader";
+import Poster from "Components/Poster";
+import Helmet from "react-helmet";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
+import * as Constants from "Constants";
+import { useT } from "Components/context";
 
-const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
-  loading ? (
+const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) => {
+  const t = useT();
+
+  return loading ? (
     <Loader />
   ) : (
     <>
       <Helmet>
-        <title>{Constants.SERVICE_NAME}</title>
+        <title>{t(Constants.SERVICE_NAME)}</title>
       </Helmet>
       <Container>
         <Row>
@@ -28,7 +31,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
         <Row>
           <Col>
             {nowPlaying && nowPlaying.length > 0 && (
-              <Section title={Constants.NOW_PLAYING}>
+              <Section title={t(Constants.NOW_PLAYING)}>
                 {nowPlaying.map(movie => (
                   <Poster
                     key={movie.id}
@@ -47,7 +50,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
         <Row>
           <Col>
             {upcoming && upcoming.length > 0 && (
-              <Section title={Constants.UPCOMING_MOVIE}>
+              <Section title={t(Constants.UPCOMING_MOVIE)}>
                 {upcoming.map(movie => (
                   <Poster
                     key={movie.id}
@@ -66,7 +69,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
         <Row>
           <Col>
             {popular && popular.length > 0 && (
-              <Section title={Constants.POPULAR_MOVIES}>
+              <Section title={t(Constants.POPULAR_MOVIES)}>
                 {popular.map(movie => (
                   <Poster
                     key={movie.id}
@@ -89,6 +92,7 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
       </Container>
     </>
   );
+};
 
 HomePresenter.propTypes = {
   nowPlaying: PropTypes.array,

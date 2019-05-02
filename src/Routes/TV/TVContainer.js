@@ -1,7 +1,7 @@
-import React from 'react';
-import TVPresenter from './TVPresenter';
-import { tvApi } from 'api';
-import * as Constants from 'Constants';
+import React from "react";
+import TVPresenter from "./TVPresenter";
+import { tvApi } from "api";
+import * as Constants from "Constants";
 
 export default class extends React.Component {
   state = {

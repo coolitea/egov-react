@@ -68,7 +68,10 @@ const translations = {
     "Top Rated Shows": "최고 평가 TV 프로그램",
     "Popular Shows": "인기 TV 프로그램",
     "Airing Today": "오늘 상영작",
-    "TV Show Results": "TV 프로그램 결과"
+    "TV Show Results": "TV 프로그램 결과",
+
+    // Support page
+    FAQ: "자주 묻는 질문"
   },
   id: {
     // Title
