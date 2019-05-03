@@ -33,6 +33,8 @@
   - react-helmet : 웹 페이지별 Title 관리
 - axios : HTTP 클라이언트
   - http-proxy-middleware : 개발 중 Proxying API 요청
+- eslint-config-airbnb : 코딩 스타일 가이드 적용
+  - eslint-config-prettier : 소스 코드 포맷터 적용
 
 ## Screens
 
@@ -56,36 +58,113 @@ https://www.themoviedb.org/
 
 ## 소스 프로그램 분류
 
+### 프로젝트 구조
+
+```
+egov-react
+├── README.md
+├── package.json
+├── .gitignore
+├── .prettierrc
+├── public
+│   ├── index.html
+│   ├── manifest.json
+│   ├── favicon.ico
+│   └── icons 
+│       ├── icon-32x32.png
+│       ├── icon-128x128.png
+│       ├── icon-144x144.png
+│       ├── icon-152x152.png
+│       ├── icon-192x192.png
+│       └── icon-256x256.png
+├── src
+│   ├── index.js
+│   ├── serviceWorker.js
+│   ├── Constants.js
+│   ├── api.js
+│   ├── Components
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── GlobalStyles.js
+│   │   ├── context.js
+│   │   ├── translations.js
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   ├── Loader.js
+│   │   └── Router.js
+│   ├── Routes
+│   │   ├── About
+│   │   │   ├── index.js
+│   │   │   ├── AboutContainer.js
+│   │   │   └── AboutPresenter.js
+│   │   ├── Home
+│   │   │   ├── index.js
+│   │   │   ├── HomeContainer.js
+│   │   │   └── HomePresenter.js
+│   │   ├── Detail
+│   │   │   ├── index.js
+│   │   │   ├── DetailContainer.js
+│   │   │   └── DetailPresenter.js
+│   │   ├── Support
+│   │   │   ├── index.js
+│   │   │   ├── SupportContainer.js
+│   │   │   └── SupportPresenter.js
+│   │   └── Terms
+│   │   │   ├── index.js
+│   │   │   ├── TermsContainer.js
+│   │   │   └── TermsPresenter.js
+│   └── assets
+│       ├── images
+│       │   ├── about-service_32m.jpg
+│       │   └── team
+│       │       ├── ceo_320.jpg
+│       │       ├── cfo_320.jpg
+│       │       ├── cio_320.jpg
+│       │       ├── coo_320.jpg
+│       │       ├── cso_320.jpg
+│       │       ├── cto_320.jpg
+│       │       └── TermsPresenter.js
+│       └── noPosterSmall.png
+├── node_modules
+└── build
+
+```
+
 ### 개발 대상 프로그램
-- /
-  - package.json
-  - README.md
-- public/
-  - index.html
-  - favicon.ico
-  - manifest.json
-  - (옵션) icons/
-- src/
-  - *.js
-  - Routes/
-  - Components/
-  - assets/
-    - images/
+node_modules 및 build 폴더 이외의 모든 파일
+ 
+```
+egov-react
+├── README.md
+├── package.json
+├── .gitignore
+├── .prettierrc
+├── public
+└─- src
+```
 
 ### 빌드 시 서버에 관리하는 프로그램
-- node_modules/
+
+```
+egov-react
+└─- node_modules
+```
 
 ### 배포 대상 프로그램 
-- build/
-  - index.html
-  - service-workier.js
-  - static/
-  - manifest.json
-  - favicon.ico
-  - *-manifest.json
-  - *.js
-  - (옵션) icons/
 
+```
+egov-react
+└─- build
+    ├── index.html
+    ├─- service-workier.js
+    ├─- manifest.json
+    ├─- favicon.ico
+    ├─- static
+    ├── icons
+    ├─- *-manifest.json
+    └─- *.js
+
+```
 
 ## 실행 방법 요약
 
