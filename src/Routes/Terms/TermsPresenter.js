@@ -36,4 +36,8 @@ TermsPresenter.propTypes = {
   error: PropTypes.string,
 };
 
+TermsPresenter.defaultProps = {
+  error: '',
+};
+
 export default TermsPresenter;

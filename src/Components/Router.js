@@ -14,6 +14,7 @@ import About from '../Routes/About';
 import Movie from '../Routes/Movie';
 import TV from '../Routes/TV';
 import Search from '../Routes/Search';
+import Grid from '../Routes/Grid';
 import Support from '../Routes/Support';
 import Terms from '../Routes/Terms';
 
@@ -29,6 +30,7 @@ export default () => (
         <Route path="/tv" component={TV} />
         <Route path="/show/:id" component={Detail} />
         <Route path="/search" component={Search} />
+        <Route path="/grid" component={Grid} />
         <Route path="/support" component={Support} />
         <Route path="/terms" component={Terms} />
         <Redirect from="*" to="/" />

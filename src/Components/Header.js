@@ -39,6 +39,12 @@ export default withRouter(({ location: { pathname } }) => {
               <Link to="/search">{t(Constants.SEARCH)}</Link>
             </Navbar.Text>
             <Navbar.Text>
+              <Link to="/grid">{t(Constants.GRID)}</Link>
+            </Navbar.Text>
+            <Navbar.Text>
+              <Link to="/support">{t(Constants.SUPPORT)}</Link>
+            </Navbar.Text>
+            <Navbar.Text>
               <Link to="/support">{t(Constants.SUPPORT)}</Link>
             </Navbar.Text>
           </Nav>

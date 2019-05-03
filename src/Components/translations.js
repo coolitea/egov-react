@@ -8,6 +8,7 @@ const translations = {
     Search: '검색',
     'Search Movies or TV Shows...': '영화나 TV 프로그램을 검색하세요...',
     Sample: '샘플',
+    Grid: '그리드',
 
     // Footer
     'Family Sites': '패밀리 사이트',
@@ -19,6 +20,7 @@ const translations = {
     // Common Messages
     Loading: '로딩 중',
     'Nothing found': '검색된 결과가 없습니다.',
+    'This page is not ready yet.': '이 페이지는 아직 준비중입니다.',
 
     // About page
     About: '소개',
