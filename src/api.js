@@ -1,18 +1,16 @@
 import axios from 'axios';
-import * as Constants from './Constants';
+// import * as Constants from './Constants';
+// import { useSetLang } from './Components/context';
 
 /* API Overview
  * https://www.themoviedb.org/documentation/api
  * https://developers.themoviedb.org/3
  */
 
-let language = 'us-EN';
-
-if (language === Constants.LANGUAGES.ENG) {
-  language = 'us-EN';
-} else {
-  language = 'ko-KR';
-}
+// 'ko-KR'
+// 'id-ID'
+// 'us-EN'
+const language = 'ko-KR';
 
 const api = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
