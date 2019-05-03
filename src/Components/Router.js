@@ -1,20 +1,21 @@
-import React from "react";
+import React from 'react';
 import {
   HashRouter as Router,
   Route,
   Redirect,
-  Switch
-} from "react-router-dom";
-import Home from "Routes/Home";
-import About from "Routes/About";
-import Movie from "Routes/Movie";
-import TV from "Routes/TV";
-import Header from "Components/Header";
-import Footer from "Components/Footer";
-import Search from "Routes/Search";
-import Support from "Routes/Support";
-import Detail from "Routes/Detail";
-import Terms from "Routes/Terms";
+  Switch,
+} from 'react-router-dom';
+
+import Header from './Header';
+import Footer from './Footer';
+import Home from '../Routes/Home';
+import Detail from '../Routes/Detail';
+import About from '../Routes/About';
+import Movie from '../Routes/Movie';
+import TV from '../Routes/TV';
+import Search from '../Routes/Search';
+import Support from '../Routes/Support';
+import Terms from '../Routes/Terms';
 
 export default () => (
   <Router>

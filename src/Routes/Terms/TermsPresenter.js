@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Loader from 'Components/Loader';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Alert from 'react-bootstrap/Alert';
-import * as Constants from 'Constants';
+import Loader from '../../Components/Loader';
+import * as Constants from '../../Constants';
 
 const TermsPresenter = ({ loading, error }) =>
   loading ? (
@@ -33,7 +33,7 @@ const TermsPresenter = ({ loading, error }) =>
 
 TermsPresenter.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default TermsPresenter;

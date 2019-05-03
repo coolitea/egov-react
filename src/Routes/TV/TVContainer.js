@@ -1,7 +1,7 @@
-import React from "react";
-import TVPresenter from "./TVPresenter";
-import { tvApi } from "api";
-import * as Constants from "Constants";
+import React from 'react';
+import { tvApi } from '../../api';
+import TVPresenter from './TVPresenter';
+import * as Constants from '../../Constants';
 
 export default class extends React.Component {
   state = {
@@ -9,24 +9,24 @@ export default class extends React.Component {
     popular: null,
     airingToday: null,
     error: null,
-    loading: true
+    loading: true,
   };
 
   async componentDidMount() {
     try {
       const {
-        data: { results: topRated }
+        data: { results: topRated },
       } = await tvApi.topRated();
       const {
-        data: { results: popular }
+        data: { results: popular },
       } = await tvApi.popular();
       const {
-        data: { results: airingToday }
+        data: { results: airingToday },
       } = await tvApi.airingToday();
       this.setState({ topRated, popular, airingToday });
     } catch {
       this.setState({
-        error: Constants.NOTHING_FOUND
+        error: Constants.NOTHING_FOUND,
       });
     } finally {
       this.setState({ loading: false });

@@ -1,17 +1,17 @@
-import React from "react";
-import Router from "Components/Router";
-import GlobalStyles from "Components/GlobalStyles";
-import Lang from "./context";
-import translations from "./translations";
-import * as Constants from "Constants";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import React from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faLanguage,
   faUserFriends,
   faPiggyBank,
-  faCommentDollar
-} from "@fortawesome/free-solid-svg-icons";
+  faCommentDollar,
+} from '@fortawesome/free-solid-svg-icons';
+import * as Constants from '../Constants';
+import GlobalStyles from './GlobalStyles';
+import Router from './Router';
+import translations from './translations';
+import Lang from './context';
 
 library.add(fab, faLanguage, faUserFriends, faPiggyBank, faCommentDollar);
 

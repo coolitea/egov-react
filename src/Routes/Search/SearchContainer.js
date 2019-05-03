@@ -1,7 +1,7 @@
 import React from 'react';
+import { moviesApi, tvApi } from '../../api';
+import * as Constants from '../../Constants';
 import SearchPresenter from './SearchPresenter';
-import { moviesApi, tvApi } from 'api';
-import * as Constants from 'Constants';
 
 export default class extends React.Component {
   state = {
@@ -9,7 +9,7 @@ export default class extends React.Component {
     tvResults: null,
     searchTerm: '',
     error: null,
-    loading: false
+    loading: false,
   };
 
   handleSubmit = event => {
@@ -22,10 +22,10 @@ export default class extends React.Component {
 
   updateTerm = event => {
     const {
-      target: { value }
+      target: { value },
     } = event;
     this.setState({
-      searchTerm: value
+      searchTerm: value,
     });
   };
 
@@ -34,14 +34,14 @@ export default class extends React.Component {
     this.setState({ loading: true });
     try {
       const {
-        data: { results: movieResults }
+        data: { results: movieResults },
       } = await moviesApi.search(searchTerm);
       const {
-        data: { results: tvResults }
+        data: { results: tvResults },
       } = await tvApi.search(searchTerm);
       this.setState({
         movieResults,
-        tvResults
+        tvResults,
       });
     } catch {
       this.setState({ error: Constants.NOTHING_FOUND });

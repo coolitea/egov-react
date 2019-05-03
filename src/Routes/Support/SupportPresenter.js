@@ -1,16 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import Accordion from "react-bootstrap/Accordion";
-import Alert from "react-bootstrap/Alert";
-import * as Constants from "Constants";
-import { useT } from "Components/context";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Accordion from 'react-bootstrap/Accordion';
+import Alert from 'react-bootstrap/Alert';
+import Loader from '../../Components/Loader';
+import * as Constants from '../../Constants';
+import { useT } from '../../Components/context';
 
 const SupportPresenter = ({ loading, error }) => {
   const t = useT();
@@ -89,7 +89,7 @@ const SupportPresenter = ({ loading, error }) => {
 
 SupportPresenter.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default SupportPresenter;

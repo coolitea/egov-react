@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Section from "Components/Section";
-import Loader from "Components/Loader";
-import Poster from "Components/Poster";
-import Helmet from "react-helmet";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Alert from "react-bootstrap/Alert";
-import * as Constants from "Constants";
-import { useT } from "Components/context";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
+import Poster from '../../Components/Poster';
+import Loader from '../../Components/Loader';
+import Section from '../../Components/Section';
+import * as Constants from '../../Constants';
+import { useT } from '../../Components/context';
 
 const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => {
   const t = useT();
@@ -83,7 +83,7 @@ TVPresenter.propTypes = {
   popular: PropTypes.array,
   airingToday: PropTypes.array,
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default TVPresenter;

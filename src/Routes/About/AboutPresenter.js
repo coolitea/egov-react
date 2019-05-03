@@ -1,27 +1,27 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Alert from "react-bootstrap/Alert";
-import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
-import * as Constants from "Constants";
-import ceo from "assets/images/team/ceo_320.jpg";
-import cfo from "assets/images/team/cfo_320.jpg";
-import cio from "assets/images/team/cio_320.jpg";
-import coo from "assets/images/team/coo_320.jpg";
-import cso from "assets/images/team/cso_320.jpg";
-import cto from "assets/images/team/cto_320.jpg";
-import { useT } from "Components/context";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useT } from '../../Components/context';
+import cio from '../../assets/images/team/cio_320.jpg';
+import coo from '../../assets/images/team/coo_320.jpg';
+import cso from '../../assets/images/team/cso_320.jpg';
+import cto from '../../assets/images/team/cto_320.jpg';
+import cfo from '../../assets/images/team/cfo_320.jpg';
+import ceo from '../../assets/images/team/ceo_320.jpg';
+import * as Constants from '../../Constants';
+import Loader from '../../Components/Loader';
 
 const fontAwesomeStyle = {
-  stroke: "darkGray",
-  strokeWidth: "20",
-  marginLeft: "20px"
+  stroke: 'darkGray',
+  strokeWidth: '20',
+  marginLeft: '20px',
 };
 
 const AboutPresenter = ({ loading, error }) => {
@@ -166,7 +166,7 @@ const AboutPresenter = ({ loading, error }) => {
 
 AboutPresenter.propTypes = {
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default AboutPresenter;

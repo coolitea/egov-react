@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Loader from "Components/Loader";
-import Section from "Components/Section";
-import Poster from "Components/Poster";
-import Helmet from "react-helmet";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert";
-import * as Constants from "Constants";
-import { useT } from "Components/context";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
+import Poster from '../../Components/Poster';
+import Section from '../../Components/Section';
+import Loader from '../../Components/Loader';
+import * as Constants from '../../Constants';
+import { useT } from '../../Components/context';
 
 const Input = styled.input`
   all: unset;
@@ -26,7 +26,7 @@ const SearchPresenter = ({
   searchTerm,
   handleSubmit,
   error,
-  updateTerm
+  updateTerm,
 }) => {
   const t = useT();
   return (
@@ -60,7 +60,7 @@ const SearchPresenter = ({
                         title={movie.original_title}
                         rating={movie.vote_average}
                         year={movie.release_date.substring(0, 4)}
-                        isMovie={true}
+                        isMovie
                       />
                     ))}
                   </Section>
@@ -102,7 +102,7 @@ SearchPresenter.propTypes = {
   searchTerm: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   handleSubmit: PropTypes.func.isRequired,
-  updateTerm: PropTypes.func.isRequired
+  updateTerm: PropTypes.func.isRequired,
 };
 
 export default SearchPresenter;

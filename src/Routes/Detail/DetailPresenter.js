@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Videos from "Components/Videos";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-import * as Constants from "Constants";
-import { useT } from "Components/context";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Helmet from 'react-helmet';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+import Videos from '../../Components/Videos';
+import Loader from '../../Components/Loader';
+import * as Constants from '../../Constants';
+import { useT } from '../../Components/context';
 
 const Backdrop = styled.div`
   position: absolute;
@@ -58,7 +58,7 @@ const DetailPresenter = ({ result, loading, error }) => {
     <>
       <Helmet>
         <title>
-          {result.original_title ? result.original_title : result.original_name}{" "}
+          {result.original_title ? result.original_title : result.original_name}{' '}
           | {t(Constants.SERVICE_NAME)}
         </title>
       </Helmet>
@@ -72,7 +72,7 @@ const DetailPresenter = ({ result, loading, error }) => {
               src={
                 result.poster_path
                   ? `https://image.tmdb.org/t/p/original${result.poster_path}`
-                  : require("../../assets/noPosterSmall.png")
+                  : require('../../assets/noPosterSmall.png')
               }
               fluid
               rounded
@@ -93,7 +93,7 @@ const DetailPresenter = ({ result, loading, error }) => {
                 </Item>
                 <Divider>•</Divider>
                 <Item>
-                  {result.runtime ? result.runtime : result.episode_run_time[0]}{" "}
+                  {result.runtime ? result.runtime : result.episode_run_time[0]}{' '}
                   min
                 </Item>
                 <Divider>•</Divider>
@@ -102,7 +102,7 @@ const DetailPresenter = ({ result, loading, error }) => {
                     result.genres.map((genre, index) =>
                       index === result.genres.length - 1
                         ? genre.name
-                        : `${genre.name} / `
+                        : `${genre.name} / `,
                     )}
                 </Item>
               </ItemContainer>
@@ -121,7 +121,7 @@ const DetailPresenter = ({ result, loading, error }) => {
 DetailPresenter.propTypes = {
   result: PropTypes.object,
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string
+  error: PropTypes.string,
 };
 
 export default DetailPresenter;

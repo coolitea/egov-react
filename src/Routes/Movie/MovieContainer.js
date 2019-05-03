@@ -1,7 +1,7 @@
 import React from 'react';
 import MoviePresenter from './MoviePresenter';
-import { moviesApi } from 'api';
-import * as Constants from 'Constants';
+import { moviesApi } from '../../api';
+import * as Constants from '../../Constants';
 
 export default class extends React.Component {
   state = {
@@ -9,29 +9,29 @@ export default class extends React.Component {
     popular: null,
     upcoming: null,
     loading: true,
-    error: null
+    error: null,
   };
 
   async componentDidMount() {
     try {
       const {
-        data: { results: nowPlaying }
+        data: { results: nowPlaying },
       } = await moviesApi.nowPlaying();
       const {
-        data: { results: upcoming }
+        data: { results: upcoming },
       } = await moviesApi.upcoming();
       const {
-        data: { results: popular }
+        data: { results: popular },
       } = await moviesApi.popular();
 
       this.setState({
         nowPlaying,
         upcoming,
-        popular
+        popular,
       });
     } catch {
       this.setState({
-        error: Constants.NOTHING_FOUND
+        error: Constants.NOTHING_FOUND,
       });
     } finally {
       this.setState({ loading: false });

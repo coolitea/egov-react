@@ -4,12 +4,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
-import * as Constants from 'Constants';
+import * as Constants from '../Constants';
 import { useT } from './context';
 
-var loadingStyle = {
+const loadingStyle = {
   aligntment: 'center',
-  marginTop: '50px'
+  marginTop: '50px',
 };
 
 export default () => {
@@ -30,7 +30,8 @@ export default () => {
               animation="grow"
               role="status"
               variant="success"
-              style={loadingStyle}>
+              style={loadingStyle}
+            >
               <span className="sr-only">{t(Constants.LOADING)} ...</span>
             </Spinner>
           </Col>

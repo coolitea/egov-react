@@ -1,18 +1,18 @@
-import React from "react";
-import { Link, withRouter } from "react-router-dom";
-import styled from "styled-components";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { useSetLang, useT } from "./context";
-import * as Constants from "Constants";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import styled from 'styled-components';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import * as Constants from '../Constants';
+import { useSetLang, useT } from './context';
 
 const Footer = styled.footer``;
 
 let language = {
   code: Constants.LANGUAGES.EN.code,
-  show: Constants.LANGUAGES.EN.show
+  show: Constants.LANGUAGES.EN.show,
 };
 
 export default withRouter(({ location: { pathname } }) => {
@@ -20,8 +20,7 @@ export default withRouter(({ location: { pathname } }) => {
   const t = useT();
 
   function handleLanguage(eventKey) {
-    if (language.code === eventKey) {
-    } else {
+    if (language.code !== eventKey) {
       if (eventKey === Constants.LANGUAGES.EN.code) {
         setLang(Constants.LANGUAGES.EN.code);
         language = Constants.LANGUAGES.EN;
@@ -125,21 +124,21 @@ export default withRouter(({ location: { pathname } }) => {
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/pages/한국예탁결제원/491409054328717"
               >
-                <FontAwesomeIcon icon={["fab", "facebook"]} />
+                <FontAwesomeIcon icon={['fab', 'facebook']} />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/channel/UCCkOHu8cifMUsfrlv2tBB_A"
               >
-                <FontAwesomeIcon icon={["fab", "youtube"]} />
+                <FontAwesomeIcon icon={['fab', 'youtube']} />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://github.com/coolitea/egov-react"
               >
-                <FontAwesomeIcon icon={["fab", "github"]} />
+                <FontAwesomeIcon icon={['fab', 'github']} />
               </a>
             </Navbar.Text>
           </Nav>

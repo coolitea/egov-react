@@ -1,4 +1,5 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext } from 'react';
+
 const LangContext = createContext();
 
 const Lang = ({ defaultLang, children, translations }) => {
@@ -7,9 +8,8 @@ const Lang = ({ defaultLang, children, translations }) => {
   const hyperTranslate = text => {
     if (lang === defaultLang) {
       return text;
-    } else {
-      return translations[lang][text] || text;
     }
+    return translations[lang][text] || text;
   };
 
   return (

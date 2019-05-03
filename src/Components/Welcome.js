@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Constants from 'Constants';
 import Alert from 'react-bootstrap/Alert';
+import * as Constants from '../Constants';
 import { useT } from './context';
 
 export default () => {

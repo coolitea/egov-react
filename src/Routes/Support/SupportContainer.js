@@ -1,18 +1,18 @@
 import React from 'react';
 import SupportPresenter from './SupportPresenter';
-import * as Constants from 'Constants';
+import * as Constants from '../../Constants';
 
 export default class extends React.Component {
   state = {
     error: null,
-    loading: true
+    loading: true,
   };
 
   async componentDidMount() {
     try {
     } catch {
       this.setState({
-        error: Constants.NOTHING_FOUND
+        error: Constants.NOTHING_FOUND,
       });
     } finally {
       this.setState({ loading: false });

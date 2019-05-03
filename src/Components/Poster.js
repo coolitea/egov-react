@@ -77,7 +77,15 @@ Poster.propTypes = {
   title: PropTypes.string.isRequired,
   rating: PropTypes.number,
   year: PropTypes.string,
-  isMovie: PropTypes.bool
+  isMovie: PropTypes.bool,
+};
+
+// Set default props
+Poster.defaultProps = {
+  imageUrl: '../assets/noPosterSmall.png',
+  rating: 0,
+  year: '',
+  isMovie: false,
 };
 
 export default Poster;
