@@ -9,4 +9,4 @@ import App from './Components/App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-serviceWorker.register();
+serviceWorker.unregister();

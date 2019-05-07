@@ -13,8 +13,6 @@
     "eslint-config-prettier": "^4.2.0",
     "gh-pages": "^2.0.1",
     "http-proxy-middleware": "^0.19.1",
-    "i": "^0.3.6",
-    "npm": "^6.9.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.0",
@@ -30,11 +28,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
-  "homepage": "http://coolitea.github.io/egov-react",
   "eslintConfig": {
     "extends": [
       "react-app",
